@@ -1,0 +1,130 @@
+
+       Phishing prevention for individuals with visual impairment
+
+Abstract
+
+   This document explains our findings on providing phishing prevention
+   for individuals with visual impairment (IVI).  Currently, usable
+   anti-phishing technologies often emphasize browser's address bar, by
+   changing color to green, showing server certificates' strength with
+   icons, highlighting domain names, and etc.  To the best of our
+   knowledge, all counters are designed for sigted people, not for IVI.
+   In order to provide usable anti-phishing for IVI, this document
+   summarizes findings for stakeholders.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   2.  Phishing websites . . . . . . . . . . . . . . . . . . . . . .   2
+     2.1.  Application vendors . . . . . . . . . . . . . . . . . . .   3
+     2.2.  Screen reader vendors . . . . . . . . . . . . . . . . . .   3
+     2.3.  Operating system vendors  . . . . . . . . . . . . . . . .   3
+   3.  Phishing Email  . . . . . . . . . . . . . . . . . . . . . . .   3
+     3.1.  Application vendors . . . . . . . . . . . . . . . . . . .   3
+   4.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     4.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+     4.2.  Informative References  . . . . . . . . . . . . . . . . .   4
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   4
+
+1.  Introduction
+
+   Currently, individuals with visual impairment (IVI) could not assess
+   the websites' credibility, due to the few trustworthy information
+   provided by their web browsers.  IVI often use screen reader while
+   accessing information through the speech or sound information from
+   the text.  However, the almost of all screen readers are designed to
+   deal with web content, but are not capable to the information
+   appeared at the address bar of the web browser.  As a phishing site
+   has a look-like of the legitimate sites, and hence, it is difficult
+   for IVI to distinguish phishing even if they use screen readers.
+
+   From the viewpoints of IVI, there are demands on assessing the
+   trustworthy information that are appeared in the address bar of the
+   web browser.  As similar to sighted individuals, IVI needs to know
+   the existence of web server's certificates, the color appeared at the
+   address bar, and the domain name.  Without these information, IVI
+   have few chance to be aware of phishing.
+
+   In order to solve this problem, such stakeholders that OS,
+   application, and screen reader vendors, should unite efforts.  This
+   document summarizes a checklist for providing a better user interface
+   to IVI.
+
+2.  Phishing websites
+
+2.1.  Application vendors
+
+   Application (web user agent, web browser) vendors may provide
+   trustworthy information to the screen readers.  Currently, screen
+   readers interact to web browser to retrieve Document Object Model
+   (DOM) tree within the browser, with accessibility APIs provided by OS
+   vendors.  As well as this fact, application vendors can provide
+   trustworthy information that may be referred by screen readers.
+
+   ISO/IEC 40500:2012 [ISO:40500] defined the accessibility guidelines
+   for people with disabilities.  However, it was not correspond to
+   provide trustworthy information appeared in the address bar.  CA/B
+   baseline requirements documents [CAB:Baseline] was the standard for
+   certificates and certificate authorities, however it did not define
+   how browsers show certificates to users.
+
+2.2.  Screen reader vendors
+
+   Screen reader vendors may retrieve trust worthy information from
+   websites, and they may summarize the information to IVI.  Especially, color
+   green with EV-SSL certificates has important meanings to the web
+   browser, the existence of EV-SSL certificate may be explained at the
+   beginning of browsing by default.
+
+2.3.  Operating system vendors
+
+   Operating system (OS) vendors may design user experience for IVI
+   while assessing the trustworthy information.  Aside from web
+   browsing, there are many cases that IVI want to retrieve security
+   information, e.g., opening files, executing programs, and etc.
+
+   OS vendors may integrate a shortcut for showing security information.
+   For instance, shortcut key "CTRL + o" usually means opening files in
+   Windows OS and its applications.  As similar to that, a shortcut key
+   for showing security information works for IVI to make user
+   experience.
+
+3.  Phishing Email
+
+3.1.  Application vendors
+
+   Application (mail user agent) or screen reader vendors may summarize
+   trustworthy information for assessing the credibility of email.  For
+   IVI, it is difficult to check such information that S/MIME
+   certificates, PGP signature, DKIM, and SPF, in respectively.
+
+   Webmail application vendors can define DOM nodes or elements that can
+   contain trustworthy information.  It is helpful for screen readers to
+   retrieve the information and facilitates the readers to provide the
+   information for IVI.
+
+4.  References
+
+4.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <http://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC5070]  Danyliw, R., Meijer, J., and Y. Demchenko, "The Incident
+              Object Description Exchange Format", RFC 5070,
+              DOI 10.17487/RFC5070, December 2007,
+              <http://www.rfc-editor.org/info/rfc5070>.
+
+4.2.  Informative References
+
+   [ISO:40500]
+              W3C Web Content Accessibility Guidelines (WCAG) 2.0, "ISO/
+              IEC 40500:2012", 2012, <http://www.iso.org/>.
+
+   [CAB:Baseline]
+              CA/Browser Forum, "Baseline Requirements Certificate
+              Policy for the Issuance and Management of Publicly-Trusted
+              Certificates", 2015, <https://cabforum.org/baseline-
+              requirements-documents/>.
